@@ -1,0 +1,9 @@
+<?php 
+
+//the address to send the notifications of a new form for review
+define("TO_MAIL", "somebody@somewhere.com");
+
+//the address to list in the 'from' field in those notifications
+define("FROM_MAIL", "someoneelse@somewhereelse.com");
+
+?>

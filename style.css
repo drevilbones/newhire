@@ -1,0 +1,78 @@
+/* TODO: make pretty colors, different colors for review and edit */
+
+fieldset#field-jenz-acc, div#com-exist-div, div#phone-exist-div {
+    display: none;
+}
+
+body {
+    max-width: 960px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+fieldset#field-notes, fieldset#field-em-choose {
+    margin-bottom: 15px;
+}
+
+textarea#ad-notes {
+    width: 100%;
+}
+
+input[type=text], input[type=date], input[type=number], select {
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+div#com-new-div, div#phone-new-div {
+    display: inline;
+}
+
+label {
+    width: 33%;
+    display: inline-block;
+}
+
+input:read-only, input:disabled {
+    border-style: none none solid;
+    border-color: black;
+    color: black;
+    background-color: white;
+}
+
+input[type=submit] {
+    border: 2px solid gray;
+    font-size: 20px;
+}
+
+input[type=submit]:active {
+    background-color:dimgray;
+}
+
+input#sendButt {
+    border: 2px solid red;
+    float: right;
+}
+
+#saved {
+    color: red;
+    float: right;
+    font-size: 50px;
+    opacity: 1;
+    transition: opacity 5s ease 1s;
+}
+
+.error {
+    color: red;
+    font-size: 50px;
+}
+
+@media print {
+    .dontprint {
+        display: none;
+    }
+}
+
+.red {
+    color: red;
+}

@@ -1,0 +1,209 @@
+
+
+    <h1>New Hire Technology Request Site [DEV]</h1>
+
+    <p>To request network login and email accounts as well as technical resources from the IT Department please fill out this form as completely as possible and hit the submit button.  This will generate an email to IT for review and processing.  Submitting this request assumes that the appropriate HR paperwork has been completed and signed.</p>
+
+    <form id="the-form" action="process.php" method=POST>
+        <fieldset id="field-em-choose">
+            <legend>Desired Position Type</legend>
+
+            <p>To begin, please choose a “Desired Position Type” from the pull-down menu.  The pull-down option you choose will then determine what IT resources are available for your choice.</p>
+        
+            <label for="em_type">Desired Position Type:
+            <select id="em_type" name="em_type">
+                <option hidden disabled selected value="unselected"> -- select -- </option>
+                <option value="full-time">Full-Time Staff</option>
+                <option value="part-time">Part-Time Staff</option>
+                <option value="work-study">Work Study</option>
+                <option value="online-prog">Online Program</option>
+                <option value="tutor">Tutors</option>
+                <option value="core-fac">Core Faculty</option>
+                <option value="adjunct-fac">Senior/Adjunct Faculty</option>
+                <option value="other">Other</option>
+            </select></label>
+        </fieldset>
+
+        <fieldset id="field-id">
+            <legend>Employee Identification</legend>
+
+            <label for="fname">First Name:
+            <input type="text" id="fname" name="fname" required></label>
+
+            <label for="lname">Last Name:
+            <input type="text" id="lname" name="lname" required></label>
+
+            <label for="title">Title:
+            <input type="text" name="title" id="title" required></label>
+
+            <label for="Start Date">Start Date:
+            <input type="date" name="sdate" id="sdate" required></label>
+
+            <label for="dept">Department:
+            <select name="dept" id="dept" required>
+                <option hidden disabled selected value="unselected"> -- select -- </option>
+                <option value="Academic Affairs">Academic Affairs</option>
+                <option value="Academic Resources">Academic Resources</option>
+                <option value="Board of Trustees">Board of Trustees</option>
+                <option value="Business Office">Business Office</option>
+                <option value="Business Operations">Business Operations</option>
+                <option value="Development Office">Development Office</option>
+                <option value="Enrollment Office">Enrollment Office</option>
+                <option value="Finance and Administration">Finance and Administration</option>
+                <option value="Financial Aid Office">Financial Aid Office</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="International Office">International Office</option>
+                <option value="IT">IT</option>
+                <option value="Lawrence Site">Lawrence Site</option>
+                <option value="Marketing & Publications">Marketing & Publications</option>
+                <option value="Ontario Site (California)">Ontario Site (California)</option>
+                <option value="President Office">President Office</option>
+                <option value="Puerto Rico Site">Puerto Rico Site</option>
+                <option value="Registrar Office">Registrar Office</option>
+                <option value="Research and Evaluation">Research and Evaluation</option>
+                <option value="School of Education">School of Education</option>
+                <option value="Springfield Site">Springfield Site</option>
+                <option value="SRDM">SRDM</option>
+                <option value="Student Academic Service Office">Student Academic Service Office</option>
+            </select></label>
+
+            <label for="himngr">Hiring Manager:
+            <input type="text" name="himngr" id="himngr" required></label>
+
+            <label for="jenzabarID">Jenzabar ID:
+            <input type="number" name="jenzabarID" id="jenzabarID"></label>
+        </fieldset>
+        
+        <fieldset id="field-login">
+            <legend>Network Login and Email Accounts</legend>
+
+            <p>This information will be used to create their network login ID (firstname.lastname).</p>
+            <p>Please note that it is up to the hiring manager to let IT what the new person's login and email address preference should be.  For example William Harrison may prefer to have his email address and login read as Bill.Harrison@cambridgecollege.edu and Bill.Harrison.</p>
+            <p>This will be automatically filled for you based on First Name and Last Name from above, but should be edited to reflect the desired login/email.</p>
+
+            <label class="des-log" for="desired_login">Desired Email/Login:
+            <input type="text" name="desired_login" id="desired_login" required></label>
+        </fieldset>
+        
+        <fieldset id="field-hardware">
+            <legend>Hardware</legend>
+
+            <div id="div-computer-radios">
+                <span class="newcomp" id="newcomp">
+                    <label for="com-new"><input type="radio" name="computer" id="com-new" value="com-new">New Computer
+                </label></span>
+                <label for="com-exist">
+                    <input type="radio" name="computer" id="com-exist" value="com-exist">Existing Computer
+                </label>
+                <label for="com-none">
+                    <input type="radio" name="computer" id="com-none" value="com-none">Does Not Need Computer
+                </label>
+            </div>
+
+            <div id="com-exist-div">
+                <label for="com-exist-name">Previous Computer User:</label>
+                <input type="text" name="com-exist-name" id="com-exist-name">
+            </div>
+
+            <div id="div-phone-radios">                    
+                <label for="phone-new">
+                    <input type="radio" name="phone" id="phone-new" value="phone-new">New Phone
+                </label>                    
+                <label for="phone-exist">
+                    <input type="radio" name="phone" id="phone-exist" value="phone-exist">Existing Phone
+                </label>                    
+                <label for="phone-none">
+                    <input type="radio" name="phone" id="phone-none" value="phone-none">Does Not Need Phone
+                </label>
+            </div>                    
+
+            <div id="phone-exist-div">
+                <label for="phone-exist-ext">
+                    <input type="text" name="phone-exist-ext" id="phone-exist-ext">Existing Phone Extension:
+                </label>                    
+            </div>
+        </fieldset>
+
+        <fieldset id="field-software">
+            <legend>Software</legend>
+
+            <p id="std-sft">The following software comes standard with each desktop and includes Jenzabar, 
+                Nuance PDF, Microsoft Office (Excel, Outlook, PowerPoint, Word), Zoom.  Also 
+                included are these browser types: Edge (formerly Microsoft Internet Explorer), Google Chrome, 
+                and Mozilla Firefox.</p>
+                <p>If the employee needs access to additional software, please check below:</p>                    
+            <label for="astra"><input type="checkbox" name="astra" id="astra">Ad Astra</label>
+            <label for="adp-man"><input type="checkbox" name="adp-man" id="adp-man">ADP Manager Access</label>
+            <label for="solomon"><input type="checkbox" name="solomon" id="solomon">Dynamics SL (Solomon)</label>
+            <label for="infomaker"><input type="checkbox" name="infomaker" id="infomaker">Infomaker</label>
+            <label for="jenzabar"><input type="checkbox" name="jenzabar" id="jenzabar">Jenzabar</label>
+            <label for="jrm"><input type="checkbox" name="jrm" id="jrm">JRM</label>                
+            <label for="raisers"><input type="checkbox" name="raisers" id="raisers">Raiser's Edge</label>
+            <label for="powerfaids"><input type="checkbox" name="powerfaids" id="powerfaids">PowerFaids</label>
+        </fieldset>
+
+        <fieldset id="field-shared">
+            <legend>Shared Resources</legend>
+
+            <label for="dept-l">Departmental L Drive(s):</label>
+            <input type="text" name="dept-l" id="dept-l">
+            <label for="shared-mail">Shared Mailbox(es):</label>
+            <input type="text" name="shared-mail" id="shared-mail">
+            <label for="execu">Departmental Executables</label>
+            <input type="checkbox" name="execu" id="execu">
+        </fieldset>
+
+        <fieldset id="field-jenz-acc">
+            <legend>Jenzabar Access</legend>
+
+            <p>Note that permission to each of these modules is granted by the respective module 
+                managers – not the IT Department.</p>
+
+            <div id="jenz-mod-div1">
+                <input type="checkbox" name="jenz-reg" id="jenz-reg">
+                <label for="jenz-reg">Registration (Student Information)</label>
+                <input type="radio" name="jenz-reg-rw" id="jenz-reg-write">
+                <label for="jenz-reg-write">Write Permissions</label>
+                <input type="radio" name="jenz-reg-rw" id="jenz-reg-read">
+                <label for="jenz-reg-read">Read Only</label>
+            </div>
+            <div id="jenz-mod-div2">
+                <input type="checkbox" name="jenz-biz" id="jenz-biz">
+                <label for="jenz-biz">Business Office (Student Accounts)</label>
+                <input type="radio" name="jenz-biz-rw" id="jenz-biz-write">
+                <label for="jenz-biz">Write Permissions</label>
+                <input type="radio" name="jenz-biz-rw" id="jenz-biz-read">
+                <label for="jenz-biz">Read Only</label>
+            </div>
+            <div id="jenz-mod-div3">
+                <input type="checkbox" name="jenz-finaid" id="jenz-finaid">
+                <label for="jenz-finaid">Financial Aid (Student Aid Details)</label>
+                <input type="radio" name="jenz-finaid-rw" id="jenz-finaid-write">
+                <label for="jenz-finaid">Write Permissions</label>
+                <input type="radio" name="jenz-finaid-rw" id="jenz-finaid-read">
+                <label for="jenz-finaid">Read Only</label>
+            </div>
+            <div id="jenz-mod-div4">
+                <input type="checkbox" name="jenz-admiss" id="jenz-admiss">
+                <label for="jenz-admiss">Admissions (Applicant Information)</label>
+                <input type="radio" name="jenz-admiss-rw" id="jenz-admiss-write">
+                <label for="jenz-admiss">Write Permissions</label>
+                <input type="radio" name="jenz-admiss-rw" id="jenz-admiss-read">
+                <label for="jenz-admiss">Read Only</label>
+            </div>
+            <div>
+                <input type="checkbox" name="jenz-starfish" id="jenz-starfish">
+                <label for="jenz-starfish">Starfish</label>
+            </div>
+            
+        </fieldset>
+
+        <fieldset id="field-notes">
+            <legend>Additional Notes</legend>
+            <p>Any additional information can be included here.</p>
+            <textarea name="ad-notes" id="ad-notes" cols="50" rows="4"></textarea>
+        </fieldset>
+
+        <input type="submit" name="subButt" id="subButt" value="Save and Preview">
+
+    </form>

@@ -3,3 +3,4 @@ config.php
 where.php
 scratchpad.txt
 data/
+*.json

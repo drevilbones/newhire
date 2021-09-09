@@ -140,7 +140,7 @@ function inject(field, value) {
 }
 
 //set input element to readonly
-//TODO: change this to convert to regular text instead of a disabled form fields
+//TODO: change this to convert to regular text instead of disabled form fields
 //as disabled forms are ignored by accessibility software
 function makeRO(elems) {
     for (i = 0; i < elems.length; i++) {

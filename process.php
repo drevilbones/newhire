@@ -11,10 +11,9 @@ if (isset($_GET["f"])) { //if we have a filename, open it
     $form_data['subButt'] = "NONE";
     if (isset($_GET["review"])) { $form_data['subButt'] = "Submit to IT"; }
 } else if (!empty($_POST)) { //if we have post data
-    $form_data = $_POST;
+    $form_data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $filename = "data/" . $form_data['fname'] . $form_data['lname'] . $form_data['jenzabarID'] . ".json";
     if ($form_data['subButt'] == "Save" || $form_data['subButt'] == "Submit to IT") {
-        $form_data['subButt'] = "Saved";
         if (!write_file($filename, $form_data)) {
             //TODO: allow people to save even if they haven't filled all required fields
             die("Something happened when trying to write the file."); //TODO: real error handling
@@ -25,13 +24,13 @@ if (isset($_GET["f"])) { //if we have a filename, open it
             }
             if (!send_email(build_manager_email($form_data))) {
                 die("There was an error sending the manager notification.");
-            }            
+            }
         }
+        $form_data['subButt'] = "Saved";        
     } else if ($_POST['subButt'] == "Continue Form") { //if we're coming from the beginning
         //look for a file based on the data given
         $form_data = open_file($filename);
         if (!$form_data) { //if we don't find one then fill in some info
-            $form_data = $_POST;
             $form_data['desired_login'] = $form_data['fname'].".".$form_data["lname"];
             $form_data['desired_email'] = $form_data['desired_login'] . "@cambridgecollege.edu";
          }
@@ -42,9 +41,6 @@ if (isset($_GET["f"])) { //if we have a filename, open it
     header('Location: index.php', true, 303);
     die();
 }
-
-//sanitize
-array_walk_recursive($form_data, 'sanitize');
 
 require_once "html/head.php";
 

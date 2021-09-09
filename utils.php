@@ -25,14 +25,17 @@ function write_file($filename, $data) {
         fwrite($openfile, json_encode($data));
         fclose($openfile);
         $success = true;
-    }
+    } 
     
     return $success;
 }
 
-//converts to safe html special characters
-function sanitize(&$value) {
-    $value = htmlspecialchars(trim($value));
+function sanitize(&$data) {
+    foreach ($data as &$val) {
+        if (is_array($val)) { sanitize($val); }
+        else { $val = htmlspecialchars($val); }
+        print_con($val);
+    }
 }
 
 //returns a nice description based on the em_type

@@ -9,6 +9,6 @@
     <body>
         <div id="content">
         <span id="saved">Saved!</span>        
-        <h1>New Hire Technology Request Site [BETA]</h1>
+        <h1>New Hire Technology Request Site [ALPHA]</h1>
         
 <?php        
